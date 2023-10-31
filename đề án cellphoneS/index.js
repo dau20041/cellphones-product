@@ -275,5 +275,54 @@ function scrollFunction() {
     document.documentElement.scrollTop = 0;
  }
  
+let selectedElement = null;
+ document.addEventListener("DOMContentLoaded", function() {
+     const initialElement = document.querySelector('.sort-btn');
+     toggleColorSee(initialElement);
+ });
 
-    
+ function toggleColorSee(element) {
+     if (selectedElement !== element) {
+         // Nếu phần tử được nhấp vào khác với phần tử đã chọn trước đó
+         if (selectedElement) {
+             selectedElement.style.border = "1px solid black";
+             selectedElement.querySelector(".sort-click").style.opacity = "0";
+         }
+
+         element.style.border = "1px solid red";
+         element.querySelector(".sort-click").style.opacity = "1";
+
+         selectedElement = element;
+     } else {
+         // Nếu phần tử được nhấp vào là phần tử đã chọn trước đó, thì ẩn nó
+         element.style.border = "1px solid black";
+         element.querySelector(".sort-click").style.opacity = "0";
+         selectedElement = null;
+     }
+ }
+
+ let selectedElement2 = null;
+ document.addEventListener("DOMContentLoaded", function() {
+     const initialElement2 = document.querySelector('.sort-btn-2');
+     toggleColorSee2(initialElement2);
+ });
+
+ function toggleColorSee2(element) {
+     if (selectedElement2 !== element) {
+         // Nếu phần tử được nhấp vào khác với phần tử đã chọn trước đó
+         if (selectedElement2) {
+             selectedElement2.style.border = "1px solid black";
+             selectedElement2.querySelector(".sort-click-2").style.opacity = "0";
+         }
+
+         element.style.border = "1px solid red";
+         element.querySelector(".sort-click-2").style.opacity = "1";
+
+         selectedElement2 = element;
+     } else {
+         // Nếu phần tử được nhấp vào là phần tử đã chọn trước đó, thì ẩn nó
+         element.style.border = "1px solid black";
+         element.querySelector(".sort-click-2").style.opacity = "0";
+         selectedElement2 = null;
+     }
+ }
